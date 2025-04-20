@@ -1,17 +1,22 @@
-// Strict mobile device detection and prevention
+// Mobile device detection and redirection
 (function() {
     'use strict';
     
     function isMobileDevice() {
         // Check user agent
         const userAgent = navigator.userAgent.toLowerCase();
-        const mobileKeywords = [
-            'android', 'webos', 'iphone', , 'ipod', 'blackberry', 'iemobile', 
-            'opera mini', 'mobile', , 'windows phone', 'kindle', 'silk'
+        
+        // Keywords for phones only (excluding tablets)
+        const phoneKeywords = [
+            'android', 'iphone', 'ipod', 'blackberry', 'iemobile', 
+            'opera mini', 'mobile', 'windows phone'
         ];
         
-        // Check screen size
-        const isSmallScreen = window.innerWidth <= 768; // Increased threshold
+        // Check if it's specifically a phone
+        const isPhone = phoneKeywords.some(keyword => userAgent.includes(keyword));
+        
+        // Check screen size (only for phones)
+        const isSmallScreen = window.innerWidth <= 768; // Reduced threshold for phones only
         
         // Check touch capability
         const hasTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
@@ -19,14 +24,15 @@
         // Check orientation
         const isPortrait = window.matchMedia("(orientation: portrait)").matches;
         
-        // Check if any mobile indicators are present
-        return mobileKeywords.some(keyword => userAgent.includes(keyword)) || 
-               (isSmallScreen && hasTouch) ||
-               (isSmallScreen && isPortrait);
+        // Only block if it's a phone (not tablet) and meets other criteria
+        return (isPhone && isSmallScreen) || 
+               (isPhone && hasTouch) ||
+               (isPhone && isPortrait);
     }
 
     // Run check immediately
     if (isMobileDevice()) {
         window.location.href = 'mobile-restricted.html';
     }
-})(); 
+})();
+// ... existing code ...
