@@ -6,12 +6,12 @@
         // Check user agent
         const userAgent = navigator.userAgent.toLowerCase();
         const mobileKeywords = [
-            'android', 'webos', 'iphone', 'ipad', 'ipod', 'blackberry', 'iemobile', 
-            'opera mini', 'mobile', 'tablet', 'windows phone', 'kindle', 'silk'
+            'android', 'webos', 'iphone', , 'ipod', 'blackberry', 'iemobile', 
+            'opera mini', 'mobile', , 'windows phone', 'kindle', 'silk'
         ];
         
         // Check screen size
-        const isSmallScreen = window.innerWidth <= 1024; // Increased threshold
+        const isSmallScreen = window.innerWidth <= 768; // Increased threshold
         
         // Check touch capability
         const hasTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
