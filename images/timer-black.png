@@ -1,0 +1,7 @@
+<svg width="800" height="450" viewBox="0 0 800 450" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="800" height="450" rx="12" fill="black"/>
+    <text x="400" y="225" fill="white" font-family="Inter" font-size="80" font-weight="500" text-anchor="middle" dominant-baseline="middle">60:00</text>
+    <text x="400" y="150" fill="white" font-family="Inter" font-size="16" font-weight="400" text-anchor="middle" opacity="0.6">Deep Work</text>
+    <rect x="350" y="280" width="100" height="40" rx="6" fill="rgba(255,255,255,0.1)"/>
+    <text x="400" y="305" fill="white" font-family="Inter" font-size="16" font-weight="500" text-anchor="middle" dominant-baseline="middle">Start</text>
+</svg> 

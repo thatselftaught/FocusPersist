@@ -1,0 +1,976 @@
+/* Profile Page Styles */
+:root {
+    --dark-bg: #111111;
+    --card-bg: #1a1a1a;
+    --text-primary: #ffffff;
+    --text-secondary: #a0a0a0;
+    --accent-blue: #3498db;
+    --accent-purple: #9b59b6;
+    --accent-green: #2ecc71;
+    --accent-orange: #e67e22;
+    --accent-red: #e74c3c;
+    --border-radius: 12px;
+}
+
+body.dark-theme {
+    background-color: var(--dark-bg);
+    color: var(--text-primary);
+    font-family: 'Inter', sans-serif;
+}
+
+.profile-container {
+    background-color: #f8f9fa;
+    min-height: 100vh;
+}
+
+.profile-content {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Navigation */
+.app-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.app-logo {
+    background-color: var(--text-primary);
+    color: var(--dark-bg);
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.app-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.nav-link {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--text-primary);
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    position: relative;
+}
+
+.user-avatar {
+    width: 36px;
+    height: 36px;
+    background-color: var(--accent-purple);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    color: white;
+}
+
+.user-dropdown {
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+}
+
+/* User Dropdown Menu */
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    width: 180px;
+    padding: 0.75rem 0;
+    margin-top: 0.5rem;
+    display: none;
+    z-index: 100;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.user-profile:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-item {
+    display: block;
+    padding: 0.75rem 1.25rem;
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease;
+}
+
+.dropdown-item:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* User Info Card */
+.user-info-card {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+.user-avatar-large {
+    width: 120px;
+    height: 120px;
+    background: linear-gradient(135deg, #6366f1, #4f46e5);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    color: white;
+    font-weight: 600;
+}
+
+.user-details {
+    flex: 1;
+}
+
+.user-name {
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 0;
+    color: #1f2937;
+}
+
+.user-email {
+    color: #6b7280;
+    margin: 0.5rem 0;
+}
+
+.user-stats {
+    display: flex;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #4f46e5;
+    display: block;
+}
+
+.stat-label {
+    color: #6b7280;
+    font-size: 0.875rem;
+}
+
+.edit-profile-btn {
+    background: #f3f4f6;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    color: #4f46e5;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: background-color 0.2s;
+}
+
+.edit-profile-btn:hover {
+    background: #e5e7eb;
+}
+
+/* Progress Section */
+.progress-section {
+    margin-bottom: 2rem;
+}
+
+.section-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 1rem;
+}
+
+.progress-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+}
+
+.progress-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.progress-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.progress-header h4 {
+    margin: 0;
+    color: #1f2937;
+    font-weight: 500;
+}
+
+.progress-percentage {
+    color: #4f46e5;
+    font-weight: 600;
+}
+
+.progress-bar {
+    height: 8px;
+    background: #f3f4f6;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+}
+
+.progress {
+    height: 100%;
+    background: linear-gradient(90deg, #6366f1, #4f46e5);
+    border-radius: 4px;
+}
+
+.progress-details {
+    display: flex;
+    justify-content: space-between;
+    color: #6b7280;
+    font-size: 0.875rem;
+}
+
+/* Current Focus Section */
+.reading-section {
+    margin-bottom: 2rem;
+}
+
+.book-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.book-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.book-card:hover {
+    transform: translateY(-2px);
+}
+
+.book-cover {
+    height: 200px;
+    overflow: hidden;
+}
+
+.book-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.book-info {
+    padding: 1rem;
+}
+
+.book-title {
+    margin: 0;
+    color: #1f2937;
+    font-weight: 600;
+}
+
+.book-author {
+    color: #6b7280;
+    margin: 0.5rem 0;
+    font-size: 0.875rem;
+}
+
+.reading-progress {
+    margin-top: 1rem;
+}
+
+.progress-text {
+    display: block;
+    color: #6b7280;
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+}
+
+/* Focus History Section */
+.history-section {
+    margin-bottom: 2rem;
+}
+
+.history-timeline {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-item {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.timeline-item:last-child {
+    border-bottom: none;
+}
+
+.timeline-date {
+    min-width: 80px;
+    color: #6b7280;
+    font-size: 0.875rem;
+}
+
+.timeline-content {
+    display: flex;
+    gap: 1rem;
+    flex: 1;
+}
+
+.book-cover-small {
+    width: 60px;
+    height: 80px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.book-cover-small img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.timeline-details h4 {
+    margin: 0;
+    color: #1f2937;
+    font-weight: 500;
+}
+
+.timeline-details p {
+    margin: 0.5rem 0 0;
+    color: #6b7280;
+    font-size: 0.875rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .profile-content {
+        padding: 1rem;
+    }
+
+    .user-info-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .user-stats {
+        justify-content: center;
+    }
+
+    .timeline-content {
+        flex-direction: column;
+    }
+
+    .book-cover-small {
+        width: 100%;
+        height: 120px;
+    }
+}
+
+/* Profile Content */
+.profile-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.stats-card {
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Level Card */
+.level-card {
+    grid-column: span 3;
+}
+
+.level-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.level-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    color: #4facfe;
+}
+
+.level-badge i {
+    color: #4facfe;
+}
+
+.level-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.level-number {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.level-progress-info {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.level-progress-bar {
+    width: 100%;
+    height: 8px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+}
+
+.level-progress-bar .progress {
+    height: 100%;
+    background: linear-gradient(90deg, #4facfe 0%, #00f2fe 100%);
+    border-radius: 4px;
+}
+
+.progress-percentage {
+    text-align: right;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+/* Streak Cards */
+.stats-row {
+    grid-column: span 3;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.streak-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.streak-icon {
+    color: var(--accent-orange);
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.streak-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.streak-label {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.pro-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background-color: var(--accent-orange);
+    color: white;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+/* Motivation Card */
+.motivation-card {
+    grid-column: span 3;
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.header-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--accent-purple);
+}
+
+.header-dot.green-dot {
+    background-color: var(--accent-green);
+}
+
+.card-title {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    flex-grow: 1;
+}
+
+.edit-btn {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.motivation-quote {
+    font-size: 1.2rem;
+    font-weight: 500;
+    font-style: italic;
+    color: var(--text-primary);
+}
+
+/* Insights Card */
+.insights-card {
+    grid-column: span 3;
+}
+
+.insights-content {
+    margin-top: 1.5rem;
+}
+
+.time-period-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.time-period {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+}
+
+.period-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--text-secondary);
+}
+
+.time-stats-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.time-stat {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.green-text {
+    color: var(--accent-green);
+}
+
+.blue-text {
+    color: var(--accent-blue);
+}
+
+.purple-text {
+    color: var(--accent-purple);
+}
+
+/* Today's Focus Card */
+.today-focus-card {
+    grid-column: span 1;
+}
+
+.focus-header {
+    margin-bottom: 1.5rem;
+}
+
+.focus-title {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.focus-title i {
+    color: var(--accent-green);
+}
+
+.focus-title h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.focus-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.focus-stat {
+    text-align: center;
+}
+
+.stat-label {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+}
+
+.stat-value {
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+/* Progress Card */
+.progress-card {
+    grid-column: span 2;
+}
+
+.progress-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.progress-title {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.progress-title i {
+    color: var(--accent-purple);
+}
+
+.progress-title h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.camera-btn {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.progress-stats {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 1.5rem;
+}
+
+.progress-stat {
+    text-align: center;
+}
+
+.target-section {
+    margin-top: 1.5rem;
+}
+
+.target-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+}
+
+.target-label {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+}
+
+.target-control {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.target-value {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.edit-target-btn {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    font-size: 0.8rem;
+}
+
+.target-progress-bar {
+    width: 100%;
+    height: 8px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.target-progress-bar .progress {
+    height: 100%;
+    background: linear-gradient(90deg, #a18cd1 0%, #fbc2eb 100%);
+    border-radius: 4px;
+}
+
+/* Activity Card */
+.activity-card {
+    grid-column: span 3;
+}
+
+.activity-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.activity-title {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.activity-title i {
+    color: var(--accent-blue);
+}
+
+.activity-title h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.info-btn {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.activity-heatmap {
+    margin-bottom: 1rem;
+}
+
+.heatmap-grid {
+    display: grid;
+    grid-template-columns: repeat(52, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+    gap: 3px;
+    height: 120px;
+}
+
+.heatmap-cell {
+    border-radius: 2px;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.heatmap-cell.level-1 {
+    background-color: rgba(46, 204, 113, 0.2);
+}
+
+.heatmap-cell.level-2 {
+    background-color: rgba(46, 204, 113, 0.4);
+}
+
+.heatmap-cell.level-3 {
+    background-color: rgba(46, 204, 113, 0.6);
+}
+
+.heatmap-cell.level-4 {
+    background-color: rgba(46, 204, 113, 0.8);
+}
+
+.activity-legend {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+}
+
+.legend-colors {
+    display: flex;
+    gap: 2px;
+}
+
+.legend-color {
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
+}
+
+.legend-color.level-0 {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.legend-color.level-1 {
+    background-color: rgba(46, 204, 113, 0.2);
+}
+
+.legend-color.level-2 {
+    background-color: rgba(46, 204, 113, 0.4);
+}
+
+.legend-color.level-3 {
+    background-color: rgba(46, 204, 113, 0.6);
+}
+
+.legend-color.level-4 {
+    background-color: rgba(46, 204, 113, 0.8);
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+    .profile-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .level-card {
+        grid-column: span 2;
+    }
+    
+    .stats-row {
+        grid-column: span 2;
+    }
+    
+    .motivation-card {
+        grid-column: span 2;
+    }
+    
+    .insights-card {
+        grid-column: span 2;
+    }
+    
+    .today-focus-card {
+        grid-column: span 1;
+    }
+    
+    .progress-card {
+        grid-column: span 1;
+    }
+    
+    .activity-card {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-right {
+        display: none;
+    }
+    
+    .profile-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .level-card,
+    .stats-row,
+    .motivation-card,
+    .insights-card,
+    .today-focus-card,
+    .progress-card,
+    .activity-card {
+        grid-column: span 1;
+    }
+    
+    .stats-row {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    .time-period-row,
+    .time-stats-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .time-period {
+        margin-bottom: 0.5rem;
+    }
+    
+    .heatmap-grid {
+        grid-template-columns: repeat(26, 1fr);
+        grid-template-rows: repeat(14, 1fr);
+    }
+} 

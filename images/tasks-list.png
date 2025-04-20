@@ -1,0 +1,21 @@
+<svg width="800" height="450" viewBox="0 0 800 450" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="800" height="450" rx="12" fill="white"/>
+    <text x="40" y="40" fill="black" font-family="Inter" font-size="20" font-weight="600">Daily Tasks</text>
+    <text x="40" y="70" fill="#666" font-family="Inter" font-size="14">November 5, 2023</text>
+    
+    <!-- Task 1 -->
+    <circle cx="40" cy="120" r="10" fill="#4CAF50"/>
+    <text x="70" y="125" fill="black" font-family="Inter" font-size="16">Research Cloud Computing</text>
+    
+    <!-- Task 2 -->
+    <circle cx="40" cy="160" r="10" stroke="#666" stroke-width="2" fill="white"/>
+    <text x="70" y="165" fill="black" font-family="Inter" font-size="16">Study Database Design</text>
+    
+    <!-- Task 3 -->
+    <circle cx="40" cy="200" r="10" fill="#4CAF50"/>
+    <text x="70" y="205" fill="black" font-family="Inter" font-size="16">Daily Reading</text>
+    
+    <!-- Task 4 -->
+    <circle cx="40" cy="240" r="10" stroke="#666" stroke-width="2" fill="white"/>
+    <text x="70" y="245" fill="black" font-family="Inter" font-size="16">Coding Practice</text>
+</svg> 

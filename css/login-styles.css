@@ -1,0 +1,151 @@
+:root {
+    --text-color: #1a1a1a;
+    --secondary-text: #666666;
+    --background-color: #f5f2ee;
+    --border-color: #e5e5e5;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 2rem;
+}
+
+.login-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.app-logo {
+    width: 48px;
+    height: 48px;
+    background-color: var(--text-color);
+    color: white;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.login-title {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.google-signin {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    background-color: #1a1a1a;
+    color: white;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    transition: background-color 0.2s;
+}
+
+.google-signin:hover {
+    background-color: #333;
+}
+
+.google-signin img {
+    width: 20px;
+    height: 20px;
+}
+
+.divider {
+    width: 100%;
+    text-align: center;
+    position: relative;
+    color: var(--secondary-text);
+    font-size: 0.875rem;
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: calc(50% - 30px);
+    height: 1px;
+    background-color: var(--border-color);
+}
+
+.divider::before {
+    left: 0;
+}
+
+.divider::after {
+    right: 0;
+}
+
+.skip-signin {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.skip-signin:hover {
+    text-decoration: underline;
+}
+
+.terms {
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--secondary-text);
+    max-width: 300px;
+    line-height: 1.5;
+}
+
+.terms a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.terms a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+    .login-container {
+        padding: 1.5rem;
+    }
+
+    .login-title {
+        font-size: 1.5rem;
+    }
+
+    .google-signin {
+        font-size: 0.9rem;
+    }
+} 

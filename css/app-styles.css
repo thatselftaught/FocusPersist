@@ -1,0 +1,223 @@
+:root {
+    --background-color: #f5f2ee;
+    --sidebar-bg: #ffffff;
+    --text-color: #1a1a1a;
+    --text-secondary: #666666;
+    --accent-color: #1B4332;
+    --border-color: #e5e5e5;
+    --active-bg: rgba(27, 67, 50, 0.1);
+    --hover-bg: rgba(27, 67, 50, 0.05);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.5;
+}
+
+.app-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: 240px;
+    background-color: var(--sidebar-bg);
+    border-right: 1px solid var(--border-color);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.sidebar-header {
+    margin-bottom: 1rem;
+}
+
+.app-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.logo-icon {
+    width: 32px;
+    height: 32px;
+    background-color: var(--text-color);
+    color: white;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+}
+
+.app-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.app-name {
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.app-version {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+}
+
+.section-title {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.nav-items {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    border-radius: 6px;
+    cursor: pointer;
+    color: var(--text-color);
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+}
+
+.nav-item:hover {
+    background-color: var(--hover-bg);
+}
+
+.nav-item.active {
+    background-color: var(--active-bg);
+    color: var(--accent-color);
+    font-weight: 500;
+}
+
+.nav-item i {
+    font-size: 1rem;
+    width: 20px;
+}
+
+/* Main Content Styles */
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    position: relative;
+}
+
+.timer-controls {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+}
+
+.fullscreen-btn {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    cursor: pointer;
+    padding: 0.5rem;
+    font-size: 1.25rem;
+    opacity: 0.6;
+    transition: opacity 0.2s;
+}
+
+.fullscreen-btn:hover {
+    opacity: 1;
+}
+
+.timer-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.timer-modes {
+    display: flex;
+    gap: 1rem;
+}
+
+.mode-btn {
+    background: none;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 100px;
+    font-size: 0.9rem;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.mode-btn.active {
+    background-color: var(--text-color);
+    color: white;
+}
+
+.timer-display {
+    font-size: 8rem;
+    font-weight: 600;
+    letter-spacing: -2px;
+    color: var(--text-color);
+}
+
+.start-btn {
+    background-color: var(--text-color);
+    color: white;
+    border: none;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.start-btn:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .app-container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+        padding: 1rem;
+    }
+
+    .timer-display {
+        font-size: 4rem;
+    }
+} 
