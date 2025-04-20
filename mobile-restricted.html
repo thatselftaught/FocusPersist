@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Access Restricted</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f5f5f5;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .restricted-container {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 500px;
+            width: 100%;
+        }
+
+        .icon {
+            font-size: 48px;
+            color: #ff4444;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            color: #666;
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        .desktop-icon {
+            font-size: 24px;
+            margin-right: 10px;
+        }
+
+        .refresh-button {
+            display: none;
+        }
+
+        @media (max-width: 1024px) {
+            .refresh-button {
+                display: inline-block;
+                background-color: #ff4444;
+                color: white;
+                padding: 10px 20px;
+                border-radius: 5px;
+                text-decoration: none;
+                font-weight: 500;
+                margin-top: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="restricted-container">
+        <div class="icon">🚫</div>
+        <h1>Mobile Access Restricted</h1>
+        <p>
+            This web application is designed exclusively for desktop and laptop computers. 
+            Please switch to a desktop device for the best experience.
+        </p>
+        <p>
+            <i class="desktop-icon">💻</i>
+            Desktop access required
+        </p>
+        <a href="#" class="refresh-button" onclick="window.location.reload()">Try Again</a>
+    </div>
+
+    <script>
+        // Prevent going back
+        history.pushState(null, null, location.href);
+        window.onpopstate = function () {
+            history.go(1);
+        };
+
+        // Prevent any attempts to resize or rotate
+        window.addEventListener('resize', function() {
+            window.location.reload();
+        });
+
+        window.addEventListener('orientationchange', function() {
+            window.location.reload();
+        });
+    </script>
+</body>
+</html> 
